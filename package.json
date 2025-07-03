@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Sitio web para Mezcal Monte Carlo",
   "main": "src/main.jsx",
-    "homepage": "https://monteclaro.shop",  "scripts": {
+    "homepage": "https://Tortri.github.io/MonteClaro",  "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
