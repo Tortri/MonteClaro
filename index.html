@@ -1,12 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Pages Site</title>
-    <link rel="stylesheet" href="style.css"> </head>
+    <title>Mezcal Monte Carlo</title>
+    <!-- Tailwind CSS CDN - Essential for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter for a modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Apply Inter font globally */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
 <body>
-    <h1>Hello from GitHub Pages!</h1>
-    <p>This is my first website hosted on GitHub.</p>
-    <script src="script.js"></script> </body>
+    <!-- This is where your React app will be mounted -->
+    <div id="root"></div>
+
+    <!-- Your React application's main JavaScript file -->
+    <!-- Ensure this path is correct for your project structure (e.g., /src/index.js or /src/main.jsx) -->
+    <script type="module" src="/src/index.js"></script>
+</body>
 </html>
