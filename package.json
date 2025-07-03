@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "Sitio web para Mezcal Monte Carlo",
   "main": "src/main.jsx",
-    "homepage": "https://Tortri.github.io/MonteClaro",  "scripts": {
+  "homepage": "./", // Use "./" for relative paths, which is often safest for GitHub Pages
+  "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "npm run build", // This runs 'npm run build' automatically before 'deploy'
+    "deploy": "gh-pages -d dist"  // This deploys the 'dist' folder
   },
   "keywords": [
     "mezcal",
