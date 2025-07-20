@@ -273,8 +273,8 @@ function App() {
             </form>
 
             <div className="mt-12 text-gray-700 space-y-4">
-              <p className="flex items-center justify-center text-lg"><Phone size={20} className="mr-2 text-green-600" /> +52 55 1234 5678</p>
-              <p className="flex items-center justify-center text-lg"><Mail size={20} className="mr-2 text-green-600" /> info@monteclaromezcal.shop</p>
+              <p className="flex items-center justify-center text-lg"><Phone size={20} className="mr-2 text-green-600" /> +52 221 428 9468</p>
+              <p className="flex items-center justify-center text-lg"><Mail size={20} className="mr-2 text-green-600" /> monteclaro@monteclaro.shop</p>
               <p className="flex items-center justify-center text-lg"><MapPin size={20} className="mr-2 text-green-600" /> Puebla, Puebla, Mexico</p>
             </div>
           </div>
@@ -289,7 +289,7 @@ function App() {
             {/* Placeholder for social media links */}
             <a href="#" className="text-gray-400 hover:text-white transition-colors">Facebook</a>
             <a href="#" className="text-gray-400 hover:text-white transition-colors">Instagram</a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">Twitter</a>
+            <a href="#" className="text-gray-400 hover:text-white transition-colors">Twitter/X</a>
           </div>
         </div>
       </footer>
