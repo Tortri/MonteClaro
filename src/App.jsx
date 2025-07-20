@@ -23,12 +23,12 @@ function App() {
           <div className="flex items-center">
             {/* Using the user's provided image for the logo */}
             <img 
-              src="montecarlo.png" 
-              alt="Mezcal Monte Carlo Logo" 
+              src="monteclaro.png" 
+              alt="Mezcal Monte Claro Logo" 
               className="rounded-full mr-2 h-10 w-10 object-cover" 
               onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/40x40/EAB308/FFFFFF?text=MC" }} // Fallback with yellowish-gold color (yellow-500)
             />
-            <span className="text-2xl font-bold text-green-700">Mezcal Monte Carlo</span>
+            <span className="text-2xl font-bold text-green-700">Mezcal Monte Claro</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -66,7 +66,7 @@ function App() {
           <div className="absolute inset-0 bg-black opacity-50"></div>
           <div className="relative z-10 text-white p-6 rounded-lg max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
-              Mezcal Monte Carlo: <br /> El espíritu de México en cada gota.
+              Mezcal Monte Claro: <br /> El espíritu de México en cada gota.
             </h1>
             <p className="text-xl md:text-2xl mb-8 drop-shadow-md">
               Tu evento especial merece la autenticidad y el sabor inigualable de nuestro mezcal artesanal.
@@ -86,7 +86,7 @@ function App() {
             <div className="text-center md:text-left">
               <h2 className="text-4xl font-bold text-green-700 mb-6">Nuestra Tradición</h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                En Mezcal Monte Carlo, cada botella es un tributo a la rica herencia y al arte ancestral de la producción de mezcal en México.
+                En Mezcal Monte Claro, cada botella es un tributo a la rica herencia y al arte ancestral de la producción de mezcal en México.
                 Utilizamos métodos tradicionales, transmitidos de generación en generación, para asegurar un sabor auténtico y una calidad excepcional.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
@@ -106,7 +106,7 @@ function App() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {/* Product Card 1 */}
               <div className="bg-gray-50 rounded-xl shadow-lg p-6 flex flex-col items-center transform hover:scale-105 transition-transform duration-300">
-                <img src="https://placehold.co/200x300/EAB308/FFFFFF?text=Mezcal+Espadín" alt="Mezcal Espadín Monte Carlo" className="rounded-lg mb-6 max-h-72 object-contain" />
+                <img src="https://placehold.co/200x300/EAB308/FFFFFF?text=Mezcal+Espadín" alt="Mezcal Espadín Monte Claro" className="rounded-lg mb-6 max-h-72 object-contain" />
                 <h3 className="text-2xl font-semibold text-gray-900 mb-3">Mezcal Espadín Joven</h3>
                 <p className="text-gray-700 text-center mb-4">
                   El clásico por excelencia. Elaborado con agave Espadín, ofrece notas suaves y equilibradas, con un final ahumado y ligeramente dulce. Perfecto para disfrutar solo o en coctelería.
@@ -116,7 +116,7 @@ function App() {
 
               {/* Product Card 2 (Example for future expansion) */}
               <div className="bg-gray-50 rounded-xl shadow-lg p-6 flex flex-col items-center transform hover:scale-105 transition-transform duration-300">
-                <img src="https://placehold.co/200x300/EAB308/FFFFFF?text=Mezcal+Reposado" alt="Mezcal Reposado Monte Carlo" className="rounded-lg mb-6 max-h-72 object-contain" />
+                <img src="https://placehold.co/200x300/EAB308/FFFFFF?text=Mezcal+Reposado" alt="Mezcal Reposado Monte Claro" className="rounded-lg mb-6 max-h-72 object-contain" />
                 <h3 className="text-2xl font-semibold text-gray-900 mb-3">Mezcal Reposado</h3>
                 <p className="text-gray-700 text-center mb-4">
                   Envejecido en barricas de roble, este mezcal adquiere una complejidad y suavidad inigualables. Notas de vainilla, caramelo y un ahumado persistente. Ideal para paladares exigentes.
@@ -126,7 +126,7 @@ function App() {
 
               {/* Product Card 3 (Example for future expansion) */}
               <div className="bg-gray-50 rounded-xl shadow-lg p-6 flex flex-col items-center transform hover:scale-105 transition-transform duration-300">
-                <img src="https://placehold.co/200x300/EAB308/FFFFFF?text=Mezcal+Tobalá" alt="Mezcal Tobalá Monte Carlo" className="rounded-lg mb-6 max-h-72 object-contain" />
+                <img src="https://placehold.co/200x300/EAB308/FFFFFF?text=Mezcal+Tobalá" alt="Mezcal Tobalá Monte Claro" className="rounded-lg mb-6 max-h-72 object-contain" />
                 <h3 className="text-2xl font-semibold mb-3">Mezcal Tobalá</h3>
                 <p className="text-gray-700 text-center mb-4">
                   Un mezcal silvestre y exótico, con un perfil de sabor único. Notas florales, frutales y un toque mineral que lo hacen verdaderamente especial. Una joya para conocedores.
@@ -140,9 +140,9 @@ function App() {
         {/* Order Section */}
         <section id="pedidos" className="py-16 bg-gradient-to-br from-green-700 to-green-900 text-white">
           <div className="container mx-auto px-4 md:px-6 text-center">
-            <h2 className="text-4xl font-bold mb-12">Mezcal Monte Carlo para tu Evento</h2>
+            <h2 className="text-4xl font-bold mb-12">Mezcal Monte Claro para tu Evento</h2>
             <p className="text-xl mb-10 max-w-3xl mx-auto">
-              Ofrecemos soluciones personalizadas para que Mezcal Monte Carlo sea el protagonista de tus celebraciones y negocios.
+              Ofrecemos soluciones personalizadas para que Mezcal Monte Claro sea el protagonista de tus celebraciones y negocios.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -151,7 +151,7 @@ function App() {
                 <img src="https://placehold.co/150x150/FEFCE8/FACC15?text=Bodas" alt="Bodas" className="rounded-full mb-6" />
                 <h3 className="text-2xl font-semibold mb-4">Bodas</h3>
                 <p className="mb-6 text-center">
-                  Celebra tu amor con el toque distintivo de Mezcal Monte Carlo. Opciones de botellas personalizadas y mesas de degustación para un día inolvidable.
+                  Celebra tu amor con el toque distintivo de Mezcal Monte Claro. Opciones de botellas personalizadas y mesas de degustación para un día inolvidable.
                 </p>
                 <button onClick={() => scrollToSection('contacto')} className="bg-green-700 hover:bg-green-800 text-white font-bold py-3 px-6 rounded-full transition-all duration-300">
                   Solicitar Cotización Boda
@@ -175,7 +175,7 @@ function App() {
                 <img src="https://placehold.co/150x150/FEFCE8/FACC15?text=Eventos" alt="Eventos Especiales" className="rounded-full mb-6" />
                 <h3 className="text-2xl font-semibold mb-4">Eventos Especiales</h3>
                 <p className="mb-6 text-center">
-                  Desde reuniones íntimas hasta grandes celebraciones corporativas, Mezcal Monte Carlo es la elección perfecta para un toque de distinción.
+                  Desde reuniones íntimas hasta grandes celebraciones corporativas, Mezcal Monte Claro es la elección perfecta para un toque de distinción.
                 </p>
                 <button onClick={() => scrollToSection('contacto')} className="bg-green-700 hover:bg-green-800 text-white font-bold py-3 px-6 rounded-full transition-all duration-300">
                   Cotizar Evento
@@ -190,7 +190,7 @@ function App() {
           <div className="container mx-auto px-4 md:px-6 text-center max-w-3xl">
             <h2 className="text-4xl font-bold text-green-700 mb-8">Contáctanos</h2>
             <p className="text-lg text-gray-700 mb-10">
-              Estamos listos para ayudarte a hacer de tu evento o negocio una experiencia inolvidable con Mezcal Monte Carlo.
+              Estamos listos para ayudarte a hacer de tu evento o negocio una experiencia inolvidable con Mezcal Monte Claro.
               Envíanos un mensaje o contáctanos directamente.
             </p>
 
@@ -274,7 +274,7 @@ function App() {
       {/* Footer Section */}
       <footer className="bg-gray-900 text-gray-300 py-8">
         <div className="container mx-auto px-4 md:px-6 text-center">
-          <p className="mb-4">&copy; {new Date().getFullYear()} Mezcal Monte Carlo. Todos los derechos reservados.</p>
+          <p className="mb-4">&copy; {new Date().getFullYear()} Mezcal Monte Claro. Todos los derechos reservados.</p>
           <div className="flex justify-center space-x-6">
             {/* Placeholder for social media links */}
             <a href="#" className="text-gray-400 hover:text-white transition-colors">Facebook</a>
