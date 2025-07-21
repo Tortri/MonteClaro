@@ -23,7 +23,7 @@ function App() {
           <div className="flex items-center">
             {/* Using the user's provided image for the logo */}
             <img 
-              src="images/logo.png" 
+              src="/images/logo.png" 
               alt="Mezcal Monte Claro Logo" 
               className="rounded-full mr-2 h-10 w-10 object-cover" 
               onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/40x40/EAB308/FFFFFF?text=MC" }} // Fallback with yellowish-gold color (yellow-500)
@@ -62,7 +62,7 @@ function App() {
 
       <main>
         {/* Hero Section */}
-        <section id="inicio" className="relative h-screen flex items-center justify-center text-center bg-cover bg-center" style={{ backgroundImage: "url('images/mezcal_background.png')" }}>
+        <section id="inicio" className="relative h-screen flex items-center justify-center text-center bg-cover bg-center" style={{ backgroundImage: "url('/images/mezcal_background.png')" }}>
           <div className="absolute inset-0 bg-black opacity-50"></div>
           <div className="relative z-10 text-white p-6 rounded-lg max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
@@ -148,7 +148,7 @@ function App() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
               {/* Order Type: Weddings */}
               <div className="bg-white text-gray-800 rounded-xl shadow-lg p-8 flex flex-col items-center transform hover:scale-105 transition-transform duration-300">
-                <img src="images/bodas.png" alt="Bodas" className="rounded-full mb-6" />
+                <img src="/images/bodas.png" alt="Bodas" className="rounded-full mb-6" />
                 <h3 className="text-2xl font-semibold mb-4">Bodas</h3>
                 <p className="mb-6 text-center">
                   Celebra tu amor con el toque distintivo de Mezcal Monte Claro. Opciones de botellas personalizadas y mesas de degustación para un día inolvidable.
@@ -160,7 +160,7 @@ function App() {
 
               {/* Order Type: Restaurants */}
               <div className="bg-white text-gray-800 rounded-xl shadow-lg p-8 flex flex-col items-center transform hover:scale-105 transition-transform duration-300">
-                <img src="images/restaurantes.png" alt="Restaurantes" className="rounded-full mb-6" />
+                <img src="/images/restaurantes.png" alt="Restaurantes" className="rounded-full mb-6" />
                 <h3 className="text-2xl font-semibold mb-4">Restaurantes</h3>
                 <p className="mb-6 text-center">
                   Eleva la experiencia culinaria de tus clientes con nuestro mezcal artesanal. Precios especiales para distribuidores y restaurantes.
@@ -172,7 +172,7 @@ function App() {
 
               {/* Order Type: Special Events */}
               <div className="bg-white text-gray-800 rounded-xl shadow-lg p-8 flex flex-col items-center transform hover:scale-105 transition-transform duration-300">
-                <img src="images/eventos.png" alt="Eventos Especiales" className="rounded-full mb-6" />
+                <img src="/images/eventos.png" alt="Eventos Especiales" className="rounded-full mb-6" />
                 <h3 className="text-2xl font-semibold mb-4">Eventos Especiales</h3>
                 <p className="mb-6 text-center">
                   Desde reuniones íntimas hasta grandes celebraciones corporativas, Mezcal Monte Claro es la elección perfecta para un toque de distinción.
