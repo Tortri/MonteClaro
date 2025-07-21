@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useForm } from '@formspree/react';
 import { Menu, X, ChevronDown, Phone, Mail, MapPin, ArrowLeft, ArrowRight } from 'lucide-react'; // Importing icons from lucide-react
 
 // Main App component
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
+
+  const [formState, handleFormSubmit] = useForm("xldlgoky");
 
   // Function to scroll to a specific section
   const scrollToSection = (id) => {
@@ -191,7 +194,7 @@ function App() {
           </div>
         </section>
 
-        {/* Contact Section */}
+        {/* Contact Section - UPDATED */}
         <section id="contacto" className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 md:px-6 text-center max-w-3xl">
             <h2 className="text-4xl font-bold text-green-700 mb-8">Contáctanos</h2>
@@ -200,73 +203,83 @@ function App() {
               Envíanos un mensaje o contáctanos directamente.
             </p>
 
-            <form className="bg-white p-8 rounded-xl shadow-lg space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-left text-gray-700 text-lg font-medium mb-2">Nombre Completo</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 transition-all"
-                  placeholder="Tu nombre"
-                  required
-                />
+            {/* This logic will show a success message after the form is submitted */}
+            {formState.succeeded ? (
+              <div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-6 rounded-lg shadow-lg text-left">
+                <h3 className="text-2xl font-bold mb-2">¡Gracias por tu mensaje!</h3>
+                <p className="text-lg">Hemos recibido tu solicitud y nos pondremos en contacto contigo pronto.</p>
               </div>
-              <div>
-                <label htmlFor="email" className="block text-left text-gray-700 text-lg font-medium mb-2">Correo Electrónico</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 transition-all"
-                  placeholder="tu.correo@ejemplo.com"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="phone" className="block text-left text-gray-700 text-lg font-medium mb-2">Teléfono (Opcional)</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 transition-all"
-                  placeholder="Ej. +52 221 428 9468"
-                />
-              </div>
-              <div>
-                <label htmlFor="event_type" className="block text-left text-gray-700 text-lg font-medium mb-2">Tipo de Solicitud</label>
-                <select
-                  id="event_type"
-                  name="event_type"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 transition-all appearance-none bg-white"
-                  required
+            ) : (
+              // Your form now has an onSubmit handler and names for each field
+              <form onSubmit={handleFormSubmit} className="bg-white p-8 rounded-xl shadow-lg space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-left text-gray-700 text-lg font-medium mb-2">Nombre Completo</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name" // Required for Formspree
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 transition-all"
+                    placeholder="Tu nombre"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-left text-gray-700 text-lg font-medium mb-2">Correo Electrónico</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email" // Required for Formspree
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 transition-all"
+                    placeholder="tu.correo@ejemplo.com"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-left text-gray-700 text-lg font-medium mb-2">Teléfono (Opcional)</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone" // Required for Formspree
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 transition-all"
+                    placeholder="Ej. +52 221 428 9468"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="event_type" className="block text-left text-gray-700 text-lg font-medium mb-2">Tipo de Solicitud</label>
+                  <select
+                    id="event_type"
+                    name="event_type" // Required for Formspree
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 transition-all appearance-none bg-white"
+                    required
+                  >
+                    <option value="">Selecciona una opción</option>
+                    <option value="boda">Boda</option>
+                    <option value="restaurante">Restaurante</option>
+                    <option value="evento_especial">Evento Especial</option>
+                    <option value="consulta_general">Consulta General</option>
+                  </select>
+                  <ChevronDown size={20} className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400" />
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-left text-gray-700 text-lg font-medium mb-2">Tu Mensaje</label>
+                  <textarea
+                    id="message"
+                    name="message" // Required for Formspree
+                    rows="5"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 transition-all"
+                    placeholder="Cuéntanos sobre tu evento o tus necesidades..."
+                    required
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  disabled={formState.submitting} // Disables the button on submission
+                  className="w-full bg-green-700 hover:bg-green-800 text-white font-bold py-3 px-6 rounded-full text-xl transition-all duration-300 transform hover:scale-105 shadow-lg disabled:bg-gray-400"
                 >
-                  <option value="">Selecciona una opción</option>
-                  <option value="boda">Boda</option>
-                  <option value="restaurante">Restaurante</option>
-                  <option value="evento_especial">Evento Especial</option>
-                  <option value="consulta_general">Consulta General</option>
-                </select>
-                <ChevronDown size={20} className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400" />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-left text-gray-700 text-lg font-medium mb-2">Tu Mensaje</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="5"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 transition-all"
-                  placeholder="Cuéntanos sobre tu evento o tus necesidades..."
-                  required
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-green-700 hover:bg-green-800 text-white font-bold py-3 px-6 rounded-full text-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
-              >
-                Enviar Solicitud
-              </button>
-            </form>
+                  {formState.submitting ? 'Enviando...' : 'Enviar Solicitud'}
+                </button>
+              </form>
+            )}
 
             <div className="mt-12 text-gray-700 space-y-4">
               <p className="flex items-center justify-center text-lg"><Phone size={20} className="mr-2 text-green-600" /> +52 221 428 9468</p>
@@ -275,7 +288,6 @@ function App() {
             </div>
           </div>
         </section>
-      </main>
 
       {/* Footer Section */}
       <footer className="bg-gray-900 text-gray-300 py-8">
