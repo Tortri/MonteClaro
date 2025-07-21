@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Menu, X, ChevronDown, Phone, Mail, MapPin } from 'lucide-react'; // Importing icons from lucide-react
+import { Menu, X, ChevronDown, Phone, Mail, MapPin, ArrowLeft, ArrowRight } from 'lucide-react'; // Importing icons from lucide-react
 
 // Main App component
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState(0);
 
   // Function to scroll to a specific section
   const scrollToSection = (id) => {
@@ -14,6 +15,23 @@ function App() {
     setIsMobileMenuOpen(false); // Close mobile menu after selection
   };
 
+  const productionImages = [
+    '/images/production1.jpeg',
+    '/images/production2.jpeg',
+    '/images/production3.jpeg',
+    '/images/production4.jpeg',
+    '/images/production5.jpeg',
+  ];
+
+  const nextImage = () => {
+    setCurrentImage((currentImage + 1) % productionImages.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImage((currentImage - 1 + productionImages.length) % productionImages.length);
+  };
+
+
   return (
     <div className="min-h-screen bg-gray-50 font-inter text-gray-800 antialiased">
       {/* Header Section */}
@@ -22,10 +40,10 @@ function App() {
           {/* Logo/Brand */}
           <div className="flex items-center">
             {/* Using the user's provided image for the logo */}
-            <img 
-              src="/images/logo.png" 
-              alt="Mezcal Monte Claro Logo" 
-              className="rounded-full mr-2 h-10 w-10 object-cover" 
+            <img
+              src="/images/logo.png"
+              alt="Mezcal Monte Claro Logo"
+              className="rounded-full mr-2 h-10 w-10 object-cover"
               onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/40x40/EAB308/FFFFFF?text=MC" }} // Fallback with yellowish-gold color (yellow-500)
             />
             <span className="text-2xl font-bold text-green-700">Mezcal Monte Claro</span>
@@ -80,24 +98,22 @@ function App() {
           </div>
         </section>
 
-        {/* About Section */}
-        <section id="nosotros" className="py-16 bg-gradient-to-br from-gray-100 to-gray-200">
-          <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="text-center md:text-left">
-              <h2 className="text-4xl font-bold text-green-700 mb-6">Nuestra Tradición</h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                En Mezcal Monte Claro, cada botella es un tributo a la rica herencia y al arte ancestral de la producción de mezcal en México.
-                Utilizamos métodos tradicionales, transmitidos de generación en generación, para asegurar un sabor auténtico y una calidad excepcional.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Desde la selección del agave maduro hasta la cocción en hornos cónicos de piedra, la molienda con tahona, la fermentación natural y la doble destilación en alambiques de cobre, cada paso es una labor de amor que culmina en un mezcal con carácter y alma.
-              </p>
+        {/* Production Section */}
+        <section id="production" className="py-16 bg-gradient-to-br from-gray-100 to-gray-200">
+            <div className="container mx-auto px-4 md:px-6">
+                <h2 className="text-4xl font-bold text-green-700 mb-12 text-center">Nuestro Proceso de Producción</h2>
+                <div className="relative flex justify-center items-center">
+                    <button onClick={prevImage} className="absolute left-0 z-10 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-2 transition-colors">
+                        <ArrowLeft size={24} className="text-green-700" />
+                    </button>
+                    <img src={productionImages[currentImage]} alt={`Production step ${currentImage + 1}`} className="rounded-xl shadow-lg max-w-full h-auto md:max-w-3xl" />
+                    <button onClick={nextImage} className="absolute right-0 z-10 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-2 transition-colors">
+                        <ArrowRight size={24} className="text-green-700" />
+                    </button>
+                </div>
             </div>
-            <div className="flex justify-center">
-              <img src="https://placehold.co/600x400/FACC15/FFFFFF?text=Proceso+Artesanal" alt="Proceso Artesanal del Mezcal" className="rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300" />
-            </div>
-          </div>
         </section>
+
 
         {/* Products Section */}
         <section id="productos" className="py-16 bg-white">
@@ -106,32 +122,22 @@ function App() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {/* Product Card 1 */}
               <div className="bg-gray-50 rounded-xl shadow-lg p-6 flex flex-col items-center transform hover:scale-105 transition-transform duration-300">
-                <img src="https://placehold.co/200x300/EAB308/FFFFFF?text=Mezcal+Espadín" alt="Mezcal Espadín Monte Claro" className="rounded-lg mb-6 max-h-72 object-contain" />
-                <h3 className="text-2xl font-semibold text-gray-900 mb-3">Mezcal Espadín Joven</h3>
+                <img src="/images/papalometl.jpg" alt="Mezcal de Palomet" className="rounded-lg mb-6 max-h-72 object-contain" />
+                <h3 className="text-2xl font-semibold text-gray-900 mb-3">Mezcal de Maguey Papalometl</h3>
                 <p className="text-gray-700 text-center mb-4">
-                  El clásico por excelencia. Elaborado con agave Espadín, ofrece notas suaves y equilibradas, con un final ahumado y ligeramente dulce. Perfecto para disfrutar solo o en coctelería.
+                  Un mezcal de sabor único y complejo, con notas herbales y un final persistente que deleita el paladar.
                 </p>
-                <span className="text-green-700 font-bold text-xl">100% Agave Espadín</span>
+                <span className="text-green-700 font-bold text-xl">100% Agave Palomet</span>
               </div>
 
-              {/* Product Card 2 (Example for future expansion) */}
+              {/* Product Card 2 */}
               <div className="bg-gray-50 rounded-xl shadow-lg p-6 flex flex-col items-center transform hover:scale-105 transition-transform duration-300">
-                <img src="https://placehold.co/200x300/EAB308/FFFFFF?text=Mezcal+Reposado" alt="Mezcal Reposado Monte Claro" className="rounded-lg mb-6 max-h-72 object-contain" />
-                <h3 className="text-2xl font-semibold text-gray-900 mb-3">Mezcal Reposado</h3>
+                <img src="/images/cenizo.jpg" alt="Mezcal de Cenizo" className="rounded-lg mb-6 max-h-72 object-contain" />
+                <h3 className="text-2xl font-semibold mb-3">Mezcal de Maguey Cenizo</h3>
                 <p className="text-gray-700 text-center mb-4">
-                  Envejecido en barricas de roble, este mezcal adquiere una complejidad y suavidad inigualables. Notas de vainilla, caramelo y un ahumado persistente. Ideal para paladares exigentes.
+                    De cuerpo robusto y sabor intenso, con notas terrosas y un carácter distintivo que lo hace el preferido de los conocedores.
                 </p>
-                <span className="text-green-700 font-bold text-xl">Edición Limitada</span>
-              </div>
-
-              {/* Product Card 3 (Example for future expansion) */}
-              <div className="bg-gray-50 rounded-xl shadow-lg p-6 flex flex-col items-center transform hover:scale-105 transition-transform duration-300">
-                <img src="https://placehold.co/200x300/EAB308/FFFFFF?text=Mezcal+Tobalá" alt="Mezcal Tobalá Monte Claro" className="rounded-lg mb-6 max-h-72 object-contain" />
-                <h3 className="text-2xl font-semibold mb-3">Mezcal Tobalá</h3>
-                <p className="text-gray-700 text-center mb-4">
-                  Un mezcal silvestre y exótico, con un perfil de sabor único. Notas florales, frutales y un toque mineral que lo hacen verdaderamente especial. Una joya para conocedores.
-                </p>
-                <span className="text-green-700 font-bold text-xl">Agave Silvestre</span>
+                <span className="text-green-700 font-bold text-xl">100% Agave Cenizo</span>
               </div>
             </div>
           </div>
@@ -224,7 +230,7 @@ function App() {
                   id="phone"
                   name="phone"
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 transition-all"
-                  placeholder="Ej. +52 55 1234 5678"
+                  placeholder="Ej. +52 221 428 9468"
                 />
               </div>
               <div>
@@ -263,8 +269,8 @@ function App() {
             </form>
 
             <div className="mt-12 text-gray-700 space-y-4">
-              <p className="flex items-center justify-center text-lg"><Phone size={20} className="mr-2 text-green-600" /> +52 55 1234 5678</p>
-              <p className="flex items-center justify-center text-lg"><Mail size={20} className="mr-2 text-green-600" /> info@montecaromezcal.shop</p>
+              <p className="flex items-center justify-center text-lg"><Phone size={20} className="mr-2 text-green-600" /> +52 221 428 9468</p>
+              <p className="flex items-center justify-center text-lg"><Mail size={20} className="mr-2 text-green-600" /> monteclaro@monteclaro.shop</p>
               <p className="flex items-center justify-center text-lg"><MapPin size={20} className="mr-2 text-green-600" /> Ciudad de México, México</p>
             </div>
           </div>
@@ -279,7 +285,8 @@ function App() {
             {/* Placeholder for social media links */}
             <a href="#" className="text-gray-400 hover:text-white transition-colors">Facebook</a>
             <a href="#" className="text-gray-400 hover:text-white transition-colors">Instagram</a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">Twitter</a>
+            <a href="#" className="text-gray-400 hover:text-white transition-colors">Twitter/X</a>
+            <a href="https://wa.me/522214289468" className="text-gray-400 hover:text-white transition-colors">WhatsApp</a>
           </div>
         </div>
       </footer>
