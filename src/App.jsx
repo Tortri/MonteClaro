@@ -39,7 +39,7 @@ function App() {
     <div className="min-h-screen bg-gray-50 font-inter text-gray-800 antialiased">
       {/* Header Section */}
       <header className="sticky top-0 z-50 bg-white shadow-md">
-        <nav className="container mx-auto flex items-center justify-between p-4 md:px-6">
+        <nav className="container mx-auto flex items-center justify-between py-6 px-4 md:px-6">
           {/* Logo/Brand */}
           <div className="flex items-center">
             {/* Using the user's provided image for the logo */}
