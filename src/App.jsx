@@ -46,7 +46,7 @@ function App() {
             <img
               src="/images/logo.png"
               alt="Mezcal Monte Claro Logo"
-              className="rounded-full mr-2 h-15 w-15 object-cover"
+              className="rounded-full mr-2 h-12 w-12 object-cover"
               onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/40x40/EAB308/FFFFFF?text=MC" }} // Fallback with yellowish-gold color (yellow-500)
             />
             <span className="text-2xl font-bold text-green-700">Mezcal Monte Claro</span>
