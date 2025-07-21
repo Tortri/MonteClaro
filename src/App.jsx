@@ -23,7 +23,7 @@ function App() {
           <div className="flex items-center">
             {/* Using the user's provided image for the logo */}
             <img 
-              src="images/monteclaro.png" 
+              src="images/logo.png" 
               alt="Mezcal Monte Claro Logo" 
               className="rounded-full mr-2 h-10 w-10 object-cover" 
               onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/40x40/EAB308/FFFFFF?text=MC" }} // Fallback with yellowish-gold color (yellow-500)
