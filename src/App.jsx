@@ -46,7 +46,7 @@ function App() {
             <img
               src="/images/logo.png"
               alt="Mezcal Monte Claro Logo"
-              className="rounded-full mr-2 h-10 w-10 object-cover"
+              className="rounded-full mr-2 h-15 w-15 object-cover"
               onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/40x40/EAB308/FFFFFF?text=MC" }} // Fallback with yellowish-gold color (yellow-500)
             />
             <span className="text-2xl font-bold text-green-700">Mezcal Monte Claro</span>
@@ -284,7 +284,7 @@ function App() {
             <div className="mt-12 text-gray-700 space-y-4">
               <p className="flex items-center justify-center text-lg"><Phone size={20} className="mr-2 text-green-600" /> +52 221 428 9468</p>
               <p className="flex items-center justify-center text-lg"><Mail size={20} className="mr-2 text-green-600" /> monteclaro@monteclaro.shop</p>
-              <p className="flex items-center justify-center text-lg"><MapPin size={20} className="mr-2 text-green-600" /> Ciudad de México, México</p>
+              <p className="flex items-center justify-center text-lg"><MapPin size={20} className="mr-2 text-green-600" /> Puebla, México</p>
             </div>
           </div>
         </section>
