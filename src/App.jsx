@@ -289,19 +289,20 @@ function App() {
           </div>
         </section>
 
-      {/* Footer Section */}
-      <footer className="bg-gray-900 text-gray-300 py-8">
-        <div className="container mx-auto px-4 md:px-6 text-center">
-          <p className="mb-4">&copy; {new Date().getFullYear()} Mezcal Monte Claro. Todos los derechos reservados.</p>
-          <div className="flex justify-center space-x-6">
-            {/* Placeholder for social media links */}
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">Facebook</a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">Instagram</a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">Twitter/X</a>
-            <a href="https://wa.me/522214289468" className="text-gray-400 hover:text-white transition-colors">WhatsApp</a>
+        {/* Footer Section */}
+        <footer className="bg-gray-900 text-gray-300 py-8">
+          <div className="container mx-auto px-4 md:px-6 text-center">
+            <p className="mb-4">&copy; {new Date().getFullYear()} Mezcal Monte Claro. Todos los derechos reservados.</p>
+            <div className="flex justify-center space-x-6">
+              {/* Placeholder for social media links */}
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">Facebook</a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">Instagram</a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">Twitter/X</a>
+              <a href="https://wa.me/522214289468" className="text-gray-400 hover:text-white transition-colors">WhatsApp</a>
+            </div>
           </div>
-        </div>
-      </footer>
+        </footer>
+      </main>
     </div>
   );
 }
