@@ -295,9 +295,7 @@ function App() {
             <p className="mb-4">&copy; {new Date().getFullYear()} Mezcal Monte Claro. Todos los derechos reservados.</p>
             <div className="flex justify-center space-x-6">
               {/* Placeholder for social media links */}
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Facebook</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Instagram</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Twitter/X</a>
+              <a href="https://www.facebook.com/profile.php?id=61583877384640" className="text-gray-400 hover:text-white transition-colors">Facebook</a>
               <a href="https://wa.me/522214289468" className="text-gray-400 hover:text-white transition-colors">WhatsApp</a>
             </div>
           </div>
